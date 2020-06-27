@@ -51,7 +51,6 @@ app.get('/cotacoes', (req, res) => {
 
     cotacoes(symbol, (err, body) => {
         if(err){
-                    
             return res.status(err.code).json({error : {
                 mensage: err.mensage,
                 code : err.code
@@ -63,7 +62,6 @@ app.get('/cotacoes', (req, res) => {
 })
 
 app.get('/help/*', (req, res) => {
-    
     res.render('404', {
         title : '404',
         errorMessage : 'Não existe página depois de /help',
@@ -79,6 +77,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('server is up on port 3000')
 })
